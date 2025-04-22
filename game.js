@@ -537,10 +537,10 @@ function gameLoop(timestamp) {
 
 function drawFireballButton() {
     const btnSize = 54;
-    // Dời nút fireball cao lên 50px nữa và sang phải 30px
+    // Dời nút fireball cao lên 50px nữa và sang trái 30px
     const marginY = 88; // 38 + 50
-    const marginX = 0; // chuyển từ -30 thành 0 để sang phải 30px so với trước
-    const x = canvas.width - btnSize + marginX + 30;
+    const marginX = 15; // chuyển từ -30 thành 0 để sang trái 30px so với trước
+    const x = canvas.width - btnSize + marginX - 30;
     const y = canvas.height - btnSize - marginY;
 
     // Nút nền
@@ -553,26 +553,6 @@ function drawFireballButton() {
     ctx.shadowBlur = gameState.fireball.ready ? 16 : 0;
     ctx.fill();
     ctx.globalAlpha = 1;
-
-    // Vẽ hình ngọn lửa đơn giản
-    ctx.save();
-    ctx.translate(x + btnSize/2, y + btnSize/2 + 4);
-    ctx.scale(1.1, 1.1);
-    ctx.beginPath();
-    ctx.moveTo(0, 18);
-    ctx.bezierCurveTo(-10, 10, -8, -8, 0, -18);
-    ctx.bezierCurveTo(8, -8, 10, 10, 0, 18);
-    ctx.closePath();
-    ctx.fillStyle = "#ffeb3b";
-    ctx.fill();
-    ctx.beginPath();
-    ctx.moveTo(0, 10);
-    ctx.bezierCurveTo(-5, 5, -4, -4, 0, -10);
-    ctx.bezierCurveTo(4, -4, 5, 5, 0, 10);
-    ctx.closePath();
-    ctx.fillStyle = "#ff5722";
-    ctx.fill();
-    ctx.restore();
 
     // Cooldown overlay
     if (!gameState.fireball.ready) {
