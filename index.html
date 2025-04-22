@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tower Defense Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="360" height="640"></canvas>
+        <div id="gameStatus">
+            Thời gian: <span id="timer">120</span>s | Vàng: <span id="gold">1000</span>
+        </div>
+        <div id="waveStatus">
+            Wave: <span id="wave">1</span> | Quái: <span id="enemies">0/5</span>
+        </div>
+        <div id="towerButtons">
+            <div class="towerBtn" id="tower1" style="background-color: #3498db;">
+                <div class="cost">50</div>
+            </div>
+            <div class="towerBtn" id="tower2" style="background-color: #e74c3c;">
+                <div class="cost">100</div>
+            </div>
+            <div class="towerBtn" id="tower3" style="background-color: #1abc9c;">
+                <div class="cost">75</div>
+            </div>
+            <div class="towerBtn" id="tower4" style="background-color: #f39c12;">
+                <div class="cost">75</div>
+            </div>
+        </div>
+        <button id="startButton">Bắt đầu chơi</button>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
